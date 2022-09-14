@@ -14,10 +14,19 @@ const [message, setMessage] = useState(' ')
 const toDoArray = []
 
 function handleClick() {
-  setTodo( [...toDo, <ListItem task={message}/>])
+  const ListNumber = toDo.length + 1
+  setTodo( [...toDo, <ListItem key={ListNumber} id={ListNumber} delete={handleDelete} task={message}/>])
   setModal('no-modal')
 }
 
+function handleDelete(e) {
+
+  const newList = [...toDo].filter(item => e.parentElement.props.id !== e.parentElement.props.id)
+
+  setTodo(newList)
+
+}
+ 
 
 
 
