@@ -21,7 +21,7 @@ function handleClick() {
 
 function handleDelete(e) {
 
-  const newList = [...toDo].filter(item => e.parentElement.props.id !== e.parentElement.props.id)
+  const newList = [...toDo].filter(item => {return item[2]})
 
   setTodo(newList)
 
