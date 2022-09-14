@@ -7,9 +7,9 @@ export default function Modal(props) {
     <div className="title"><h1>Create New Task</h1></div>
     <div className="close"><button onClick={props.closeFunction}>x</button></div>
   </div>
-  <div className="input-container">
+  <div onChange={props.addItem} className="input-container">
   <input class="get" type="text"  />
-  <button className="submit">Submit</button>
+  {props.children}
   </div>
 </div>
 

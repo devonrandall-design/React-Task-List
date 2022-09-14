@@ -108,7 +108,7 @@ p {
   box-shadow: 2px 2px 50px #3a3939;
   gap: 100px;
   transform: translateY(0px);
-  opacity: 1;
+  opacity: 0.85;
   transition: 0.35s;
 }
 

@@ -9,20 +9,19 @@ export default function App() {
 
 const [modal, setModal] = useState('no-modal')
 const [toDo, setTodo] = useState([])
+const [message, setMessage] = useState(' ')
  
 const toDoArray = []
 
-let currentList = 0;
-
-function addItem() {
-  const inputVal = document.querySelector('.get')
-  const newInputVal = inputVal.value
-
-  setTodo(toDo.push(inputVal))
-
-
-
+function handleClick() {
+  setTodo( [...toDo, <ListItem task={message}/>])
+  setModal('no-modal')
 }
+
+
+
+
+
 
 
 
@@ -31,11 +30,13 @@ function addItem() {
     <div className="main">
       <TaskSpace>
 <Header />
-<ListItem item={toDo}/>
-<ListItem />
+{[...toDo]}
+
         </TaskSpace>
         <button onClick={() => setModal('show-modal')} className="addNew">+</button>
-        <Modal addItem={addItem()} closeFunction={() => setModal('no-modal')} name={modal} />
+        <Modal addItem={(e) =>  setMessage(e.target.value)} closeFunction={() => setModal('no-modal')} name={modal}>
+        <button onClick={handleClick} className="submit">Submit</button>
+        </Modal>
         
     </div>
     
