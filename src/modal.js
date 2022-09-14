@@ -8,7 +8,7 @@ export default function Modal(props) {
     <div className="close"><button onClick={props.closeFunction}>x</button></div>
   </div>
   <div className="input-container">
-  <input type="text"  />
+  <input class="get" type="text"  />
   <button className="submit">Submit</button>
   </div>
 </div>

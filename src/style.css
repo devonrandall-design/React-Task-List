@@ -183,3 +183,32 @@ input {
 
 }
 
+.list-container {
+  width: 90%;
+  height: 3rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 10px;
+  margin: 20px 0px;
+
+}
+
+.list-container input {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+.list-container h4 {
+  width: 70%;
+}
+
+.list-container button {
+  width: 30px;
+  height: 30px;
+}
+
