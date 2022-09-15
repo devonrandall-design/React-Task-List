@@ -21,7 +21,8 @@ p {
 }
 
 .task-space {
-  width: 40vw;
+  width: 45vw;
+  min-width: 350px;
   min-height: 600px;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 20px #bd2525;
@@ -44,7 +45,7 @@ p {
 }
 
 .avatar {
-  width: 15%;
+  min-width: 15%;
   height: 5rem;
   display: flex;
   justify-content: center;
@@ -186,13 +187,12 @@ input {
 .list-container {
   width: 90%;
   height: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 0px 10px;
-  margin: 20px 0px;
+  margin: 5px 0px;
 
 }
 

@@ -6,6 +6,6 @@ export default function ListItem(props) {
 <input class="check" type="checkbox" />
 <h4>{props.task}</h4>
 <button>Edit</button>
-<button onClick={props.delete}>Del </button>
+<button onClick={() => props.deletehandle(props.id)}>Del </button>
     </div>
 }

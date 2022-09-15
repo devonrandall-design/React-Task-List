@@ -14,38 +14,49 @@ const [message, setMessage] = useState(' ')
 const toDoArray = []
 
 function handleClick() {
-  const ListNumber = toDo.length + 1
-  setTodo( [...toDo, <ListItem key={ListNumber} id={ListNumber} delete={handleDelete} task={message}/>])
-  setModal('no-modal')
+ const ListNumber = toDo.length 
+
+
+const newListItem = {
+  id: new Date().getTime(),
+  text: message,
+  completed: false,
 }
 
-function handleDelete(e) {
+  setTodo([...toDo, newListItem])
+  setMessage(" ")
+  setModal('no-modal')
+  
+}
 
-  const newList = [...toDo].filter(item => {return item[2]})
+function handleDelete(todo) {
 
-  setTodo(newList)
+
+  //console.log(target)
+  const updatedList = [...toDo].filter(item => {
+    return item.id !== todo
+    //return item.props.id > 0 }
+  })
+
+  setTodo(updatedList)
+
 
 }
  
-
-
-
-
-
-
-
 
   return (
     <div className="main">
       <TaskSpace>
 <Header />
-{[...toDo]}
+{toDo.map((item) => { return <ListItem deletehandle={handleDelete} id={item.id} key={item.id} task={item.text} />})}
 
         </TaskSpace>
         <button onClick={() => setModal('show-modal')} className="addNew">+</button>
-        <Modal addItem={(e) =>  setMessage(e.target.value)} closeFunction={() => setModal('no-modal')} name={modal}>
+        <Modal original={message} addItem={(e) => setMessage(e.target.value)} closeFunction={() => setModal('no-modal')} name={modal}>
         <button onClick={handleClick} className="submit">Submit</button>
         </Modal>
+     
+        
         
     </div>
     
